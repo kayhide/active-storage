@@ -34,10 +34,12 @@ executable active-storage
     , bytestring
     , classy-prelude
     , containers
+    , cryptonite
     , deepseq
     , directory
     , exceptions
     , filepath
+    , memory
     , mtl
     , primitive
     , stm
