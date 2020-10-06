@@ -12,8 +12,10 @@ extra-source-files:
   - README.md
 
 dependencies:
+  - aeson
   - async
   - base
+  - base64-bytestring
   - binary
   - bytestring
   - classy-prelude

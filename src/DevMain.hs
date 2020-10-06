@@ -2,8 +2,11 @@ module DevMain where
 
 import ClassyPrelude
 
+import Data.Aeson (Object, Value(..), (.=), object)
+import qualified Data.Aeson as Aeson
 import qualified Data.Binary as Binary
 import Data.Char (chr)
+import qualified Data.ByteString.Base64 as Base64
 import Text.Printf (printf)
 
 run :: IO ()
@@ -11,6 +14,8 @@ run = do
   let print x = do
         sayShow x
         say . pack . concatMap (printf "%02x ") . dump $ x
+        say $ signedId x
+        sayShow $ Aeson.encode $ wrap x "blob_id"
 
   -- > [0, 1, 123, 256].map { |x| Marshal.dump(x).unpack("H*") }
   -- => [["04086900"], ["04086906"], ["040869017b"], ["040869020001"]]
@@ -26,6 +31,12 @@ run = do
   print (-257)
   print (-2^30)
 
+signedId :: Int -> Text
+signedId x = decodeUtf8 $ Base64.encode $ dump x
+
+wrap :: Int -> Text -> Value
+wrap x purpose =
+  object [ "_rails" .= object [ "message" .= signedId x, "exp" .= Null, "pur" .= purpose ] ]
 
 -- * Ruby Marshal dump
 -- The following implementation is based on marshal format version 4.8.
