@@ -1,0 +1,84 @@
+name:                active-storage
+version:             0.1.0.0
+#synopsis:
+#description:
+homepage:            https://github.com/githubuser/active-storage
+license:             BSD3
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2020 Author name here
+category:            Web
+extra-source-files:
+  - README.md
+
+dependencies:
+  - async
+  - base
+  - bytestring
+  - classy-prelude
+  - containers
+  - deepseq
+  - directory
+  - exceptions
+  - filepath
+  - mtl
+  - primitive
+  - stm
+  - text
+  - time
+  - transformers
+  - typed-process
+  - unliftio
+  - unliftio-core
+  - unordered-containers
+  - vector
+
+default-extensions:
+  - BangPatterns
+  - BinaryLiterals
+  - ConstraintKinds
+  - DataKinds
+  - DefaultSignatures
+  - DeriveAnyClass
+  - DeriveDataTypeable
+  - DeriveFoldable
+  - DeriveFunctor
+  - DeriveGeneric
+  - DeriveTraversable
+  - DoAndIfThenElse
+  - DuplicateRecordFields
+  - EmptyDataDecls
+  - ExistentialQuantification
+  - FlexibleContexts
+  - FlexibleInstances
+  - FunctionalDependencies
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - KindSignatures
+  - LambdaCase
+  - MultiParamTypeClasses
+  - MultiWayIf
+  - NamedFieldPuns
+  - NoImplicitPrelude
+  - OverloadedLabels
+  - OverloadedLists
+  - OverloadedStrings
+  - PartialTypeSignatures
+  - PatternGuards
+  - PolyKinds
+  - RankNTypes
+  - RecordWildCards
+  - ScopedTypeVariables
+  - StandaloneDeriving
+  - TupleSections
+  - TypeApplications
+  - TypeFamilies
+  - TypeOperators
+  - TypeSynonymInstances
+  - ViewPatterns
+
+executables:
+  active-storage:
+    source-dirs:      src
+    main:             Main.hs
