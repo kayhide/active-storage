@@ -28,6 +28,7 @@ executable active-storage
   build-depends:
       async
     , base
+    , binary
     , bytestring
     , classy-prelude
     , containers

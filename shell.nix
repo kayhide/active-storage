@@ -10,5 +10,6 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     gnumake
     ghcid
+    stylish-haskell
   ];
 }
